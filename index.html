@@ -229,6 +229,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/使用Hexo和GitHub可以轻松搞出一个好看的博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="区家乐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/17/使用Hexo和GitHub可以轻松搞出一个好看的博客/" itemprop="url">使用Hexo和GitHub可以轻松搞出一个好看的博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T15:48:21+08:00">
+                2018-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="搭建博客的操作具体步骤"><a href="#搭建博客的操作具体步骤" class="headerlink" title="搭建博客的操作具体步骤"></a>搭建博客的操作具体步骤</h2><ol>
+<li><p><code>cd ~/Desktop</code>终端进入Desktop目录</p>
+</li>
+<li><p>在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意用户名是你的GitHub用户名，不是你的电脑用户名）</p>
+</li>
+<li>运行<code>npm install -g hexo-cli</code>安装 Hexo</li>
+<li><code>hexo init myBlog</code></li>
+<li><code>cd myBlog</code></li>
+<li><code>npm i</code></li>
+<li><code>hexo new 开博大吉</code>，你会看到一个 md 文件的路径,Windows 的路径中的 \ 需要变成 / 才行哦</li>
+<li><code>start xxxxxxxxxxxxxxxxxxx.md</code>，编辑这个 md 文件（windows下面使用start，Mac下使用open）</li>
+<li><code>vi _config.yml</code>，把 title 改成想要的名字，把author 改成你的名字，把最后一行 type 改成 type: git（git前有空格），在最后一行后新增一行，左边与 type 平齐，加上 repo: 仓库SSH地址（地址前有空格）</li>
+<li><code>npm install hexo-deployer-git --save</code>安装 git 部署插件</li>
+<li><code>hexo deploy</code></li>
+<li>进入对应的 repo，点setting，将GitHub Pages 功能中的source改成master branch，点save，复制预览链接</li>
+<li>用浏览器访问「预览链接/index.html」就应该看到了你的博客！（GitHub Pages 存在延迟，如果没看到，过三分钟再刷新看看）</li>
+</ol>
+<h2 id="新建一篇博客"><a href="#新建一篇博客" class="headerlink" title="新建一篇博客"></a>新建一篇博客</h2><ol>
+<li><code>hexo new 博客文件名</code>博客文件名需要改成你想要的那个</li>
+<li>复制显示的路径，使用 <code>start 路径</code> 来编辑它，Windows 的路径中的 \ 需要变成 / 才行哦</li>
+<li><code>hexo generate</code></li>
+<li><code>hexo deploy</code></li>
+<li>去看你的博客，应该能看到第二篇博客了</li>
+</ol>
+<h2 id="删除博客文章"><a href="#删除博客文章" class="headerlink" title="删除博客文章"></a>删除博客文章</h2><p>先在本地删除，然后进入博客目录依次</p>
+<ol>
+<li><code>hexo generate</code></li>
+<li><code></code>hexo deploy` </li>
+</ol>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ol>
+<li><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集</li>
+<li>随便找一个主题，进入主题的 GitHub 首页，比如我找的是 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a></li>
+<li>复制它的 SSH 地址或 HTTPS 地址，假设地址为 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:iissnan/hexo-theme-next.git</li>
+<li><code>cd themes</code></li>
+<li><code>git clone git@github.com:iissnan/hexo-theme-next.git</code></li>
+<li><code>cd ..</code></li>
+<li>将 _config.yml 的第 75 行改为 <code>theme: hexo-theme-next</code>，保存</li>
+<li><code>hexo generate</code></li>
+<li><code>hexo deploy</code></li>
+<li>等一分钟，然后刷新你的博客页面，你会看到一个新的外观。如果不喜欢这个主题，就回到第 1 步，重选一个主题。</li>
+</ol>
+<h2 id="第一次建立博客后创建源代码仓库"><a href="#第一次建立博客后创建源代码仓库" class="headerlink" title="第一次建立博客后创建源代码仓库"></a>第一次建立博客后创建源代码仓库</h2><p>1.创建名叫 blog-generator 的空仓库<br>2.按图中在终端进入你的博客目录中执行！用SSH地址！</p>
+<p><img src="/images/hexo.png" alt="hexo"></p>
+<p>3.以后每次 hexo deploy 完之后，博客就会更新；然后你还要要 add / commit /push 一下，以防万一。这个 blog-generator 就是用来生成博客的程序，而「你的用户名.github.io」仓库就是你的博客页面。</p>
+<p>如果你使用的是 Windows 系统，Hexo 很容易安装不成功，请google解决问题，或弃用windows</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/配置GitHub和git使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1864,7 +2028,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
