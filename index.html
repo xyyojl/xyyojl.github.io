@@ -229,6 +229,308 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/HTTP入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="区家乐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/21/HTTP入门/" itemprop="url">HTTP入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T19:06:10+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="WWW的发明"><a href="#WWW的发明" class="headerlink" title="WWW的发明"></a>WWW的发明</h2><p> Tim Berners-Lee（下文中称为李爵士） 在 1989 年至 1992 年间，发明了 WWW（World Wide Web），一种适用于全世界的网络。</p>
+<p>主要包含三个概念</p>
+<ol>
+<li>URI，俗称网址（能让你访问一个页面）</li>
+<li>HTTP，两个电脑之间传输内容的协议（让你能下载这个页面）</li>
+<li>HTML，超级文本，主要用来做页面跳转（让你能看懂这个页面）</li>
+</ol>
+<h2 id="URI是什么？"><a href="#URI是什么？" class="headerlink" title="URI是什么？"></a>URI是什么？</h2><p><strong>URI</strong>：<strong>统一资源标识符</strong>（Uniform Resource Identifier）</p>
+<p>URI分为URL和URN，我们一般使用URL作为网址</p>
+<h3 id="URN"><a href="#URN" class="headerlink" title="URN"></a>URN</h3><p><strong>URN</strong>：<strong>统一资源名称</strong>（Uniform Resource Name）</p>
+<p>ISBN: 9787115275790 就是一个 URN，通过 URN 你可以确定一个「唯一的」资源，ISBN: 9787115275790 对应的资源的是《JavaScript 高级程序设计（第三版）》这本书。（通过位置去找，广州某某路某某小区）</p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p><strong>URL</strong>：<strong>统一资源定位符</strong>（Uniform Resource Locator）</p>
+<p>通过 URL 你可以确定一个「唯一的」地址（网址）。（通过名字去找）</p>
+<p><strong>URL</strong>还包括<strong>端口</strong>，<strong>路径不对应任何文件</strong>，路径跟文件不是同级关系</p>
+<p><img src="/images/URL的组成.png" alt="URL的组成"></p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><ul>
+<li><code>.com</code>：顶级域名（一级域名）</li>
+<li><code>baidu.com</code>：二级域名</li>
+<li><code>www.baidu.com</code>：三级域名</li>
+</ul>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p><strong>DNS</strong>：<strong>域名系统</strong>（<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem）</p>
+<ul>
+<li>输入域名</li>
+<li>输出IP</li>
+</ul>
+<p>DNS在我们直接调用<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%AB%99" target="_blank" rel="noopener">网站</a>的名字以后就会将像<em>zh.wikipedia.org</em> 一样便于人类使用的名字转化成像<em>198.35.26.96</em> 一样便于机器识别的IP地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nslookup baidu.com</span><br><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
+<h2 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h2><p><img src="/images/服务器与浏览器的交互.png" alt="服务器与浏览器的交互"></p>
+<ul>
+<li>浏览器负责发起请求</li>
+<li>服务器在80端口接收请求</li>
+<li>服务器负责返回内容（响应）</li>
+<li>浏览器负责下载响应内容</li>
+</ul>
+<p>HTTP 的作用就是指导浏览器和服务器如何进行沟通。</p>
+<p>##HTTP入门</p>
+<ul>
+<li>curl命令的使用</li>
+<li>HTTP请求</li>
+<li>HTTP响应</li>
+</ul>
+<p><strong>HTTP(HyperText Transfer Protocol)</strong>超文本传输协议，它教客户端如何请求、服务器如何响应。</p>
+<p>###curl命令的使用</p>
+<p>####1. GET请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s -v -H &quot;xxx: yyy&quot; -- &quot;https://www.baidu.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果不清楚,如何使用curl命令的话,可以查看<a href="https://www.jianshu.com/p/e4e256f578b2" target="_blank" rel="noopener">常用命令行的使用及explainshell.com的使用技巧</a>,这里就不多讲,废话少说,直接进入正题。</p>
+<ul>
+<li><code>-s</code> 不要显示进度条</li>
+<li><code>-v</code> 要显示请求和响应</li>
+<li><code>-H</code> 添加响应头</li>
+<li><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> 请求的网站</li>
+<li><code>&quot;xxx: yyy&quot;</code>可以不用写的,下同</li>
+</ul>
+<p>不知道为什么在windows下先把要下载的内容放在前面,还有其他东西还特别多,这里就展示重要的内容<br><img src="https://upload-images.jianshu.io/upload_images/11616333-dbc1835ac92a959e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="curl命令_get1.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11616333-a226b68118d5c2dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="curl命令_get2.png"><br>上面图片中出现的<code>*</code>代表是<strong>注释</strong>,<code>&gt;</code>代表的是请求的内容,<code>&lt;</code>代表的是响应的内容</p>
+<p>请求的内容:<br>| 请求的内容              | 含义                                        |<br>| ———————– | ——————————————- |<br>| GET / HTTP/1.1          | 获取根目录,使用协议是HTTP1.1                |<br>| Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>     | 请求的网址                                  |<br>| User-Agent: curl/7.59.0 | 用的软件是curl/7.59.0,发起请求              |<br>| Accept: <em>/</em>             | 接受你返回的所有内容                        |<br>| xxx: yyy                | 上面命令有的这个,下面请求的内容也会显示这个 |<br>|                         | 回车                                        |<br>响应的内容:(下面的响应内容是我能够理解,有一些不能理解,这个就没有写出来)<br>| 响应的内容              | 含义                                            |<br>| ———————– | ———————————————– |<br>| HTTP/1.1 200 OK         | 协议是HTTP,版本号是1.1 状态码是200 状态解释是OK |<br>| Content-Length: 2443    | 响应内容的长度                                  |<br>| Content-Type: text/html | Content-Type标注响应内容的格式                  |<br>|                         | 回车                                            |</p>
+<p>####2. POST请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -s -v -H &quot;xxx: yyy&quot; -- &quot;https://www.baidu.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>请求的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; POST / HTTP/1.1</span><br><span class="line">&gt; Host: www.baidu.com</span><br><span class="line">&gt; User-Agent: curl/7.59.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt; xxx: yyy</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>响应的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt; HTTP/1.1 302 Found</span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line">&lt; Content-Length: 17931</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Date: Sun, 07 Oct 2018 01:56:57 GMT</span><br><span class="line">&lt; Etag: &quot;54d9748e-460b&quot;</span><br><span class="line">&lt; Server: bfe/1.0.8.18</span><br><span class="line">&lt;</span><br></pre></td></tr></table></figure></p>
+<p>####3. POST请求带数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -d &quot;1234567890&quot; -s -v -H &quot;xxx: yyy&quot; -- &quot;https://www.baidu.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>请求的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; POST / HTTP/1.1</span><br><span class="line">&gt; Host: www.baidu.com</span><br><span class="line">&gt; User-Agent: curl/7.59.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt; xxx: yyy</span><br><span class="line">&gt; Content-Length: 10</span><br><span class="line">&gt; Content-Type: application/x-www-form-urlencoded</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>响应的内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt; HTTP/1.1 302 Found</span><br><span class="line">&lt; Connection: Keep-Alive</span><br><span class="line">&lt; Content-Length: 17931</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Date: Sun, 07 Oct 2018 02:00:10 GMT</span><br><span class="line">&lt; Etag: &quot;54d9748e-460b&quot;</span><br><span class="line">* Server bfe/1.0.8.18 is not blacklisted</span><br><span class="line">&lt; Server: bfe/1.0.8.18</span><br><span class="line">&lt;</span><br></pre></td></tr></table></figure></p>
+<p>###HTTP请求</p>
+<p>####1.HTTP请求的格式(包含的部分)<br>| 部分    | 内容                                            |<br>| ——- | ———————————————– |<br>| 第1部分 | 动词 路径 协议/版本                             |<br>| 第2部分 | Key1: value1                                    |<br>| 第2部分 | Key2: value2                                    |<br>| 第2部分 | Content-Type: application/x-www-form-urlencoded |<br>| 第2部分 | Host: <a href="www.baidu.com">www.baidu.com</a>            |<br>| 第2部分 | User-Agent: curl/7.54.0                         |<br>| 第3部分 |                                                 |<br>| 第4部分 | 要上传的数据                                    |</p>
+<h4 id="小Tips"><a href="#小Tips" class="headerlink" title="小Tips"></a>小Tips</h4><ul>
+<li>请求最多包含4部分,最少包含3部分(第4部分可以为空)</li>
+<li>第3部分永远都是一个回车(\n),分隔第2部分和第4部分</li>
+<li>动词有GET(获取) POST(上传) PUT(整体更新) PATCH(局部更新) DELETE(删除) HEAD OPTIONS等</li>
+<li>这个的路径包含「查询参数」，但不包括「锚点」,跟URL的不同</li>
+<li>如果你没有写路径,那么路径默认为/,如果你请求的网址是<a href="https://www.baidu.com/s?wd=hello,那么路径是/s?wd=hello" target="_blank" rel="noopener">https://www.baidu.com/s?wd=hello,那么路径是/s?wd=hello</a></li>
+<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>####2.用 Chrome 开发者工具查看 HTTP 请求内容<br>打开浏览器,右键点击检查/按F12,打开Chrome 开发者工具<br><img src="https://upload-images.jianshu.io/upload_images/11616333-dc3ca098cdf6aa8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开Chrome 开发者工具.png"><br>在浏览器的地址栏输入网址<br><img src="https://upload-images.jianshu.io/upload_images/11616333-f1fb2a011e80de31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="地址栏输入网址.png"><br>在Network点击查看Request Headers,点击「view source」,看到请求的前三部分<br><img src="https://upload-images.jianshu.io/upload_images/11616333-bb6224face1229c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="寻找访问的网址.png"><br><img src="https://upload-images.jianshu.io/upload_images/11616333-6b559c1380d8f6e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击view source.png"><br><img src="https://upload-images.jianshu.io/upload_images/11616333-f0ab4ee07751ea2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="查看到响应的内容.png"></li>
+</ul>
+<ol start="4">
+<li>如果(POST)才有请求的第四部分,那么在FormData或 Payload 里面可以看到<br>###HTTP响应<br>####1.HTTP响应的格式(包含的部分)<br>| 部分    | 内容                        |<br>| ——- | ————————— |<br>| 第1部分 | 协议/版本号 状态码 状态解释 |<br>| 第2部分 | Key1: value1                |<br>| 第2部分 | Key2: value2                |<br>| 第2部分 | Content-Length: 2443        |<br>| 第2部分 | Content-Type: text/html     |<br>| 第3部分 |                             |<br>| 第4部分 | 要下载的内容                |<br>PS.</li>
+</ol>
+<ul>
+<li>状态码要背，是服务器对浏览器说的话<ul>
+<li>1xx 不常用</li>
+<li>2xx 表示成功(200 普通成功,204 创建成功(POST))</li>
+<li>3xx 表示滚吧(301永久搬走了，第二部分会告诉新地址；302暂时搬走了(临时不存在)，我还会回来这里哒；304这次的内容和上一次说的内容一样，都是一种类型的滚)</li>
+<li>4xx 表示你丫错了</li>
+<li>5xx 表示好吧，我错了</li>
+</ul>
+</li>
+<li>状态解释没什么用</li>
+<li>GET 请求和 POST 请求对应的响应可以一样，也可以不一样<br>####2.用 Chrome 开发者工具查看 HTTP 响应内容<br>过程跟请求类似,这里就不多说啦,不同之处已经加粗了</li>
+</ul>
+<ol>
+<li>打开浏览器,右键点击检查/按F12,打开Chrome 开发者工具</li>
+<li>在浏览器的地址栏输入网址</li>
+<li>在Network点击查看 <strong>Response Headers</strong>,点击「view source」,看到请求的前三部分</li>
+<li>查看 <strong>Response</strong> 或者 <strong>Preview</strong>，你会看到响应的第 4 部分<br><img src="https://upload-images.jianshu.io/upload_images/11616333-d216da032d94d57f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="查看响应的第 4 部分.png"></li>
+</ol>
+<h2 id="常见的状态码（背下来）"><a href="#常见的状态码（背下来）" class="headerlink" title="常见的状态码（背下来）"></a>常见的状态码（背下来）</h2><p>状态码是服务器对浏览器说的话</p>
+<p>200  OK</p>
+<blockquote>
+<p>请求已成功，请求所希望的响应头或数据体将随此返回。实际的响应将取决于所使用的请求方法。在GET请求中，响应将包含与请求的资源相对应的实体。在POST请求，响应将包含描述或操作结果的实体。</p>
+</blockquote>
+<p><strong>201 Created</strong></p>
+<blockquote>
+<p>请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其<a href="https://zh.wikipedia.org/wiki/URI" target="_blank" rel="noopener">URI</a>已经随Location头信息返回。假如<strong>需要的资源无法及时创建</strong>的话，应当返回’<a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81#202" target="_blank" rel="noopener">202 Accepted</a>‘。</p>
+</blockquote>
+<p><strong>202 Accepted</strong></p>
+<blockquote>
+<p>服务器已接收请求，但尚未处理。最终该请求可能会也可能不会被执行，并且可能在处理发生时被禁止。</p>
+</blockquote>
+<p><strong>203 Non-Authoritative Information（自HTTP / 1.1起）</strong></p>
+<blockquote>
+<p>服务器是一个转换代理服务器（transforming proxy，例如<a href="https://zh.wikipedia.org/wiki/%E7%B6%B2%E7%B5%A1%E5%8A%A0%E9%80%9F%E5%99%A8" target="_blank" rel="noopener">网络加速器</a>），以<code>200 OK</code>状态码为起源，但回应了原始响应的修改版本。</p>
+</blockquote>
+<p><strong>204 No Content</strong></p>
+<blockquote>
+<p>服务器成功处理了请求，没有返回任何内容。表示服务器接收到的请求已经处理完毕，但浏览器页面不会刷新。</p>
+</blockquote>
+<p><strong>300 Multiple Choices</strong></p>
+<blockquote>
+<p>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。除非这是一个HEAD请求，否则该响应应当包括一个资源特性及地址的列表的实体，以便用户或浏览器从中选择最合适的重定向地址。这个实体的格式由Content-Type定义的格式所决定。浏览器可能根据响应的格式以及浏览器自身能力，自动作出最合适的选择。</p>
+</blockquote>
+<p><strong>301 Moved Permanently</strong></p>
+<p>请求的网页已永久移动到新位置，永久性重定向</p>
+<blockquote>
+<p>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。</p>
+</blockquote>
+<p><strong>302 Found</strong></p>
+<p>HTTP/1.0就有的，临时性重定向，POST方法的重定向在未询问用户的情况下就会变成GET</p>
+<blockquote>
+<p>要求客户端执行临时重定向（原始描述短语为“Moved Temporarily”）。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。</p>
+</blockquote>
+<p><strong>303 See Other</strong></p>
+<p>HTTP/1.1新加的，都是临时重定向，303和302一样，POST重定向为GET。</p>
+<blockquote>
+<p>对应当前请求的响应可以在另一个URI上被找到，当响应于POST（或PUT / DELETE）接收到响应时，客户端应该假定服务器已经收到数据，并且应该使用单独的GET消息发出重定向。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的URI不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。</p>
+</blockquote>
+<p><strong>304 Not Modified</strong></p>
+<p>表示自从上次请求后，网页未被修改过(这次的内容和上一次说的内容一样，都是一种类型的滚)</p>
+<blockquote>
+<p>表示资源在由请求头中的If-Modified-Since或If-None-Match参数指定的这一版本之后，未曾被修改。在这种情况下，由于客户端仍然具有以前下载的副本，因此不需要重新传输资源。</p>
+</blockquote>
+<p><strong>400 Bad Request</strong></p>
+<p>客户端中存在语法错误。</p>
+<blockquote>
+<p>由于明显的客户端错误（例如，格式错误的请求语法，太大的大小，无效的请求消息或欺骗性路由请求），服务器不能或不会处理该请求。</p>
+</blockquote>
+<p><strong>401 Unauthorized</strong></p>
+<p>用户未授权，需要用户验证。</p>
+<blockquote>
+<p>类似于403 Forbidden，401语义即“<a href="https://zh.wikipedia.org/wiki/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81" target="_blank" rel="noopener">未认证</a>”，即用户没有必要的凭据。该状态码表示当前请求需要用户验证。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。客户端可以重复提交一个包含恰当的Authorization头信息的请求。如果当前请求已经包含了Authorization证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。</p>
+<p>注意：当网站（通常是网站域名）禁止IP地址时，有些网站状态码显示的401，表示该特定地址被拒绝访问网站。</p>
+</blockquote>
+<p><strong>402 Payment Required</strong></p>
+<blockquote>
+<p>该状态码是为了将来可能的需求而预留的。该状态码最初的意图可能被用作某种形式的数字现金或在线支付方案的一部分，但几乎没有哪家服务商使用，而且这个状态码通常不被使用。如果特定开发人员已超过请求的每日限制，<a href="https://zh.wikipedia.org/wiki/Google_Developers" target="_blank" rel="noopener">Google Developers</a> API会使用此状态码。</p>
+</blockquote>
+<p><strong>403 Forbidden</strong></p>
+<p>服务器已经理解请求，但拒绝执行</p>
+<blockquote>
+<p>服务器已经理解请求，但是拒绝执行它。与<a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81#401" target="_blank" rel="noopener">401响应</a>不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个HEAD请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个<a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81#404" target="_blank" rel="noopener">404响应</a>，假如它不希望让客户端获得任何信息。</p>
+</blockquote>
+<p><strong>404 Not Found</strong></p>
+<p>服务器找不到请求的网页。</p>
+<blockquote>
+<p>请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用<a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81#410" target="_blank" rel="noopener">410状态码</a>来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。</p>
+</blockquote>
+<p><strong>500 Internal Server Error</strong></p>
+<p>服务器遇到错误，无法完成请求。</p>
+<blockquote>
+<p>通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息。</p>
+</blockquote>
+<p><strong>501 Not Implemented</strong></p>
+<blockquote>
+<p>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。</p>
+</blockquote>
+<p><strong>502 Bad Gateway</strong></p>
+<blockquote>
+<p>作为<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E5%85%B3" target="_blank" rel="noopener">网关</a>或者<a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">代理</a>工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。</p>
+</blockquote>
+<p><strong>503 Service Unavailable</strong></p>
+<blockquote>
+<p>由于临时的服务器维护或者<a href="https://zh.wikipedia.org/w/index.php?title=%E8%BF%87%E8%BD%BD&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">过载</a>，服务器当前无法处理请求。这个状况是暂时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个Retry-After头用以标明这个延迟时间。如果没有给出这个Retry-After信息，那么客户端应当以处理<a href="https://zh.wikipedia.org/w/index.php?title=500_Internal_Error&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">500响应</a>的方式处理它。</p>
+</blockquote>
+<p><strong>504 Gateway Timeout</strong></p>
+<blockquote>
+<p>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如<a href="https://zh.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener">HTTP</a>、<a href="https://zh.wikipedia.org/wiki/FTP" target="_blank" rel="noopener">FTP</a>、<a href="https://zh.wikipedia.org/wiki/LDAP" target="_blank" rel="noopener">LDAP</a>）或者辅助服务器（例如<a href="https://zh.wikipedia.org/wiki/DNS" target="_blank" rel="noopener">DNS</a>）收到响应。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/21/脚本入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2257,137 +2559,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="区家乐">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-08T09:28:07+08:00">
-                2018-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2431,7 +2609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
