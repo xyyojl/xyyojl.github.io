@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="使用 Hexo + GitHub 可以轻松搞出一个好看的博客">
+<meta name="description" content="HTTP协议底层由TCP协议和IP协议构建 TCP TCP 和 UDP 的区别是什么简答：TCP 可靠、面向连接、慢一点，但注重安全性，适应于网页、邮件；UDP 不可靠，无连接、较快，安全性低一点，适应于视频、语音。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的： 12341\. 客户端：我要连接你了，可以吗2\.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开博大吉">
-<meta property="og:url" content="http://yoursite.com/2018/10/08/开博大吉/index.html">
+<meta property="og:title" content="Node.js服务器">
+<meta property="og:url" content="http://yoursite.com/2018/10/25/Node-js服务器/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="使用 Hexo + GitHub 可以轻松搞出一个好看的博客">
+<meta property="og:description" content="HTTP协议底层由TCP协议和IP协议构建 TCP TCP 和 UDP 的区别是什么简答：TCP 可靠、面向连接、慢一点，但注重安全性，适应于网页、邮件；UDP 不可靠，无连接、较快，安全性低一点，适应于视频、语音。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的： 12341\. 客户端：我要连接你了，可以吗2\.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T01:35:32.271Z">
+<meta property="og:updated_time" content="2018-10-25T14:58:29.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开博大吉">
-<meta name="twitter:description" content="使用 Hexo + GitHub 可以轻松搞出一个好看的博客">
+<meta name="twitter:title" content="Node.js服务器">
+<meta name="twitter:description" content="HTTP协议底层由TCP协议和IP协议构建 TCP TCP 和 UDP 的区别是什么简答：TCP 可靠、面向连接、慢一点，但注重安全性，适应于网页、邮件；UDP 不可靠，无连接、较快，安全性低一点，适应于视频、语音。  TCP 的三次握手指的是什么简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的： 12341\. 客户端：我要连接你了，可以吗2\.">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/08/开博大吉/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/25/Node-js服务器/"/>
 
 
 
 
 
-  <title>开博大吉 | 我的博客</title>
+  <title>Node.js服务器 | 我的博客</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/开博大吉/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/Node-js服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="区家乐">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开博大吉</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js服务器</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-08T09:32:21+08:00">
-                2018-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T22:57:19+08:00">
+                2018-10-25
               </time>
             
 
@@ -299,7 +299,23 @@
       
 
       
-        <p>使用 Hexo + GitHub 可以轻松搞出一个好看的博客</p>
+        <p>HTTP协议底层由TCP协议和IP协议构建</p>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><ol>
+<li><p><a href="https://www.nowcoder.com/questionTerminal/63c8b45c91a544bd8febc1f1ff02e3b5?toCommentId=73766" target="_blank" rel="noopener">TCP 和 UDP 的区别是什么</a><br>简答：TCP 可靠、面向连接、慢一点，但注重安全性，适应于网页、邮件；<br>UDP 不可靠，无连接、较快，安全性低一点，适应于视频、语音。</p>
+</li>
+<li><p><a href="https://github.com/jawil/blog/issues/14" target="_blank" rel="noopener">TCP 的三次握手指的是什么</a><br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1\. 客户端：我要连接你了，可以吗</span><br><span class="line">2\. 服务端：嗯，我准备好了，连接我吧</span><br><span class="line">3\. 客户端：那我连接你咯。</span><br><span class="line">4\. 开始后面步骤</span><br></pre></td></tr></table></figure>
+<p>上面内容足以应付前端面试中关于 TCP 的考题，如果你想更了解 TCP 可以看 <a href="http://www.ruanyifeng.com/blog/2017/06/tcp-protocol.html" target="_blank" rel="noopener">此文</a></p>
+</li>
+</ol>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><ol>
+<li>外网IP<br>你的路由器自己会有一个外网IP，像访问的腾讯、阿里的网站就是租用了很多外网IP</li>
+<li>内网IP<br>而你在家用的手机、电脑用的就是内网IP，路由器也会给自己一个内网IP，<strong>一般是：192.168.1.1</strong></li>
+<li>内网和外网之间不能互相访问，但是外网和外网之间可以访问，所以你在家上网就是通过路由器的外网和其他外网连接，你访问的网站在外网发送信息到你的路由器上，然后路由器将信息转到内网发送到你电脑上</li>
+<li><strong>本地 IP：127.0.0.1</strong></li>
+<li><strong>特别特殊的 IP：0.0.0.0</strong>，它不表示任何设备。</li>
+</ol>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>一个端口对应一种服务<br>HTTP服务用80端口<br>HTTPS服务用443端口<br>FTP服务用21端口<br>使用HTTP协议访问一个IP，要同时提供IP和端口号，平常没填是因为浏览器默认帮你加了</p>
 
       
     </div>
@@ -324,8 +340,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/10/21/HTTP入门/" rel="next" title="HTTP入门">
+                <i class="fa fa-chevron-left"></i> HTTP入门
               </a>
             
           </div>
@@ -333,10 +349,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/11/前端入门阶段怎么学/" rel="prev" title="前端入门阶段怎么学">
-                前端入门阶段怎么学 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -388,8 +400,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -431,6 +452,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">1.</span> <span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP"><span class="nav-number">2.</span> <span class="nav-text">IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口"><span class="nav-number">3.</span> <span class="nav-text">端口</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
